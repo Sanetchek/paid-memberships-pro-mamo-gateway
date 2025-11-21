@@ -1,0 +1,11 @@
+# Deny access to log files from web
+<Files "*.log">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Alternative for Apache 2.4+
+<FilesMatch "\.log$">
+    Require all denied
+</FilesMatch>
+
